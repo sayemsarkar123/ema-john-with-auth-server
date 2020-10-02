@@ -41,7 +41,11 @@ client.connect(err => {
     orders.insertOne(body).then(result => res.send(result));
   })
 
+  app.get('/', (req, res) => {
+    res.send('Hello World!');
+  })
+
 });
 
 
-app.listen(4000);
+app.listen(process.env.PORT || 4000);
